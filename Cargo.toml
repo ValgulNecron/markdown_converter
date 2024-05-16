@@ -3,6 +3,10 @@ name = "markdown_converter"
 description = "A simple html to markdown converter and flavored markdown to discord markdown converter"
 version = "0.1.0"
 edition = "2021"
+readme = "README.md"
+repository = "https://github.com/ValgulNecron/markdown_converter"
+license-file = "LICENSE"
+authors = ["Valgul <contact@valgul.moe>"]
 
 [dependencies]
 regex = "1.10.4"
