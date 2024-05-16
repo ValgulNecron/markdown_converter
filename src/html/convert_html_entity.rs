@@ -45,5 +45,5 @@ pub fn convert_html_entity(html_entity: &str) -> Cow<str> {
     html_entity = html_entity.replace("&hearts;", "♥");
     html_entity = html_entity.replace("&dales;", "♦");
 
-    Cow::from(html_entity)
+    Cow::Owned(html_entity)
 }

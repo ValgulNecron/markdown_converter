@@ -1,8 +1,7 @@
 use std::borrow::Cow;
 
 pub fn add_anti_slash(value: &str) -> Cow<str> {
-    let value = value.replace('`', "\\`");
-    Cow::from(value)
+    Cow::Owned(value.replace('`', "\\`"))
 }
 
 #[cfg(test)]
