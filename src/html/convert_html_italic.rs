@@ -16,10 +16,10 @@ use std::borrow::Cow;
 pub fn convert_html_italic(italic: &str) -> Cow<str> {
     Cow::Owned(
         italic
-            .replace("<i>", "_")
-            .replace("</i>", "_")
-            .replace("<em>", "_")
-            .replace("</em>", "_"),
+            .replace("<i>", "*")
+            .replace("</i>", "*")
+            .replace("<em>", "*")
+            .replace("</em>", "*"),
     )
 }
 
@@ -30,19 +30,19 @@ mod tests {
     #[test]
     fn italic_tag_converted() {
         let result = convert_html_italic("<i>Hello</i>");
-        assert_eq!(result, "_Hello_");
+        assert_eq!(result, "*Hello*");
     }
 
     #[test]
     fn em_tag_converted() {
         let result = convert_html_italic("<em>World</em>");
-        assert_eq!(result, "_World_");
+        assert_eq!(result, "*World*");
     }
 
     #[test]
     fn multiple_italic_tags_converted() {
         let result = convert_html_italic("<i>Hello</i> <em>World</em>");
-        assert_eq!(result, "_Hello_ _World_");
+        assert_eq!(result, "*Hello* *World*");
     }
 
     #[test]

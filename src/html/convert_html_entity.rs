@@ -1,5 +1,18 @@
 use std::borrow::Cow;
 
+/// `convert_html_entity` is a function that takes a string reference as an input and returns a Cow<str>.
+/// This function is designed to convert HTML entities to their corresponding characters in a given string.
+/// It specifically targets the following patterns:
+/// - Common HTML entities: `&mdash;`, `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&apos;`, `&nbsp;`, `&copy;`, `&reg;`, `&deg;`, `&plusmn;`, `&times;`, `&divide;`, `&frac12;`, `&frac14;`, `&frac34;`, `&iexcl;`, `&cent;`, `&pound;`, `&euro;`, `&yen;`, `&brvbar;`, `&sect;`, `&uml;`, `&bull;`, `&hellip;`, `&ndash;`, `&lsquo;`, `&rsquo;`, `&laquo;`, `&raquo;`, `&larr;`, `&rarr;`, `&dagger;`, `&Dagger;`, `&clubs;`, `&diams;`, `&spades;`, `&hearts;`, `&dales;`
+///
+/// # Arguments
+///
+/// * `html_entity` - A string slice that holds the content from which HTML entities should be converted.
+///
+/// # Returns
+///
+/// This function returns a Cow<str> which is an owned string with all HTML entities converted to their corresponding characters.
+///
 pub fn convert_html_entity(html_entity: &str) -> Cow<str> {
     let mut html_entity: String = html_entity.to_string();
 
@@ -46,4 +59,39 @@ pub fn convert_html_entity(html_entity: &str) -> Cow<str> {
     html_entity = html_entity.replace("&dales;", "♦");
 
     Cow::Owned(html_entity)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn ampersand_entity_converted() {
+        let result = convert_html_entity("Hello &amp; World");
+        assert_eq!(result, "Hello & World");
+    }
+
+    #[test]
+    fn less_than_entity_converted() {
+        let result = convert_html_entity("Hello &lt; World");
+        assert_eq!(result, "Hello < World");
+    }
+
+    #[test]
+    fn multiple_entities_converted() {
+        let result = convert_html_entity("Hello &amp; &lt; World");
+        assert_eq!(result, "Hello & < World");
+    }
+
+    #[test]
+    fn no_entities_unchanged() {
+        let result = convert_html_entity("Hello, world!");
+        assert_eq!(result, "Hello, world!");
+    }
+
+    #[test]
+    fn empty_string_unchanged() {
+        let result = convert_html_entity("");
+        assert_eq!(result, "");
+    }
 }

@@ -1,6 +1,19 @@
 use crate::html::convert_html_bold::convert_html_bold;
 use std::borrow::Cow;
 
+/// `convert_anilist_bold` is a function that takes a string reference as an input and returns a Cow<str>.
+/// This function is designed to convert Anilist bold syntax to standard markdown bold syntax.
+/// It specifically targets and converts the following patterns:
+/// - Double underscores (__) are replaced with double asterisks (**).
+///
+/// # Arguments
+///
+/// * `bold` - A string slice that holds the content to be converted from Anilist bold syntax to standard markdown bold syntax.
+///
+/// # Returns
+///
+/// This function returns a Cow<str> which is an owned string with all the conversions applied.
+///
 pub fn convert_anilist_bold(bold: &str) -> Cow<str> {
     let bold = bold.replace("__", "**");
     Cow::Owned(convert_html_bold(&bold).into_owned())

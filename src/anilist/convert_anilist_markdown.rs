@@ -15,6 +15,33 @@ use crate::html::remove_html_p_align::remove_html_p_align;
 use std::borrow::Cow;
 use crate::anilist::remove_anilist_code_block::remove_anilist_code_block;
 
+/// `convert_anilist_flavored_markdown` is a function that takes a string reference as an input and returns a Cow<str>.
+/// This function is designed to convert a given string from Anilist-flavored markdown to standard markdown.
+/// It specifically targets and converts the following patterns:
+/// - Backticks (`) are escaped with an anti-slash.
+/// - Anilist bold tags are converted to markdown bold syntax.
+/// - Anilist italic tags are converted to markdown italic syntax.
+/// - Anilist spoiler tags are converted to Discord spoiler tags.
+/// - Anilist code blocks are removed.
+/// - HTML links are converted to markdown links.
+/// - HTML entities are converted to their corresponding characters.
+/// - HTML line breaks are converted to markdown line breaks.
+/// - HTML strikethrough tags are converted to markdown strikethrough syntax.
+/// - HTML blockquote tags are converted to markdown blockquote syntax.
+/// - HTML header tags are converted to markdown header syntax.
+/// - HTML paragraph alignment tags are removed.
+/// - HTML images are removed.
+/// - HTML horizontal lines are removed.
+/// - Anilist lists are converted to markdown lists.
+///
+/// # Arguments
+///
+/// * `value` - A string slice that holds the content to be converted from Anilist-flavored markdown to standard markdown.
+///
+/// # Returns
+///
+/// This function returns a Cow<str> which is an owned string with all the conversions applied.
+///
 pub fn convert_anilist_flavored_markdown(value: &str) -> Cow<str> {
     let mut result = Cow::Borrowed(value);
 

@@ -1,9 +1,19 @@
 use std::borrow::Cow;
 
+/// `add_anti_slash` is a function that takes a string reference as an input and returns a Cow<str>.
+/// This function is designed to add an anti-slash before each backtick (`) in a given string.
+///
+/// # Arguments
+///
+/// * `value` - A string slice that holds the content where backticks should be escaped with an anti-slash.
+///
+/// # Returns
+///
+/// This function returns a Cow<str> which is an owned string with all backticks escaped with an anti-slash.
+///
 pub fn add_anti_slash(value: &str) -> Cow<str> {
     Cow::Owned(value.replace('`', "\\`"))
 }
-
 #[cfg(test)]
 mod tests {
     use super::*;
