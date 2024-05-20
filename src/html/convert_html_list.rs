@@ -47,7 +47,9 @@ mod tests {
 
     #[test]
     fn multiple_lists_converted() {
-        let result = convert_html_list("<ul><li>Item 1</li><li>Item 2</li></ul><ol><li>Item 3</li><li>Item 4</li></ol>");
+        let result = convert_html_list(
+            "<ul><li>Item 1</li><li>Item 2</li></ul><ol><li>Item 3</li><li>Item 4</li></ol>",
+        );
         assert_eq!(result, "- Item 1\\n- Item 2\\n- Item 3\\n- Item 4\\n");
     }
 

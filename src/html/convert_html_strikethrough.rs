@@ -42,7 +42,8 @@ mod tests {
 
     #[test]
     fn multiple_tags_converted() {
-        let result = convert_html_strikethrough("<del>strikethrough</del><strike>strikethrough</strike>");
+        let result =
+            convert_html_strikethrough("<del>strikethrough</del><strike>strikethrough</strike>");
         assert_eq!(result, "~~strikethrough~~~~strikethrough~~");
     }
 

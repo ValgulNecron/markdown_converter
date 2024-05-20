@@ -1,5 +1,4 @@
-use std::borrow::Cow;
-use crate::common::add_antislash::add_anti_slash;
+use crate::common::add_anti_slash;
 use crate::html::convert_html_blockquote::convert_html_blockquote;
 use crate::html::convert_html_bold::convert_html_bold;
 use crate::html::convert_html_entity::convert_html_entity;
@@ -8,6 +7,7 @@ use crate::html::convert_html_italic::convert_html_italic;
 use crate::html::convert_html_line_break::convert_html_line_break;
 use crate::html::convert_html_link::convert_html_link;
 use crate::html::convert_html_strikethrough::convert_html_strikethrough;
+use std::borrow::Cow;
 
 /// `convert_steam_flavored_markdown` is a function that takes a string reference as an input and returns a Cow<str>.
 /// This function is designed to convert a given string from Steam-flavored markdown to standard markdown.

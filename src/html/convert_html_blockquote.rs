@@ -37,7 +37,9 @@ mod tests {
 
     #[test]
     fn multiple_blockquote_tags_converted() {
-        let result = convert_html_blockquote("<blockquote>Hello</blockquote> <blockquote>World</blockquote>");
+        let result = convert_html_blockquote(
+            "<blockquote>Hello</blockquote> <blockquote>World</blockquote>",
+        );
         assert_eq!(result, "> Hello > World");
     }
 

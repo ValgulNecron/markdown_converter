@@ -33,7 +33,10 @@ mod tests {
     #[test]
     fn multiple_link_tags_converted() {
         let result = convert_html_link("<a href=\"https://example1.com\">Example1</a><a href=\"https://example2.com\">Example2</a>");
-        assert_eq!(result, "[Example1](https://example1.com)[Example2](https://example2.com)");
+        assert_eq!(
+            result,
+            "[Example1](https://example1.com)[Example2](https://example2.com)"
+        );
     }
 
     #[test]

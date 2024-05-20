@@ -21,11 +21,6 @@ pub fn remove_html_horizontal_line(value: &str) -> Cow<str> {
     // also remove <hr />
     let re = Regex::new(r#"<hr\s*/>"#).unwrap();
     let value = re.replace_all(&value, "");
-    // if there is --- or *** can be 3 or more
-    let re = Regex::new(r#"^-{3,}$"#).unwrap();
-    let value = re.replace_all(&value, "");
-    let re = Regex::new(r#"^\*{3,}$"#).unwrap();
-    let value = re.replace_all(&value, "");
 
     Cow::Owned(value.into_owned())
 }
@@ -43,18 +38,6 @@ mod tests {
     #[test]
     fn html_horizontal_line_with_slash_removed() {
         let result = remove_html_horizontal_line("<hr />");
-        assert_eq!(result, "");
-    }
-
-    #[test]
-    fn markdown_horizontal_line_dash_removed() {
-        let result = remove_html_horizontal_line("---");
-        assert_eq!(result, "");
-    }
-
-    #[test]
-    fn markdown_horizontal_line_asterisk_removed() {
-        let result = remove_html_horizontal_line("***");
         assert_eq!(result, "");
     }
 

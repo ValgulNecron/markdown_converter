@@ -39,7 +39,8 @@ mod tests {
 
     #[test]
     fn html_image_removed() {
-        let result = remove_html_image("<img alt=\"fallback text\" src=\"https://example.com/image.png\">");
+        let result =
+            remove_html_image("<img alt=\"fallback text\" src=\"https://example.com/image.png\">");
         assert_eq!(result, "");
     }
 

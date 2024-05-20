@@ -1,7 +1,7 @@
 [package]
 name = "markdown_converter"
 description = "A simple html to markdown converter and flavored markdown to discord markdown converter"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 readme = "README.md"
 repository = "https://github.com/ValgulNecron/markdown_converter"
