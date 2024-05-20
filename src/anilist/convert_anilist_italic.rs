@@ -16,7 +16,7 @@ use std::borrow::Cow;
 /// This function returns a Cow<str> which is an owned string with all the conversions applied.
 ///
 pub fn convert_anilist_italic(italic: &str) -> Cow<str> {
-    let italic = italic.replace("_", "*");
+    let italic = italic.replace('_', "*");
     Cow::Owned(convert_html_italic(&italic).into_owned())
 }
 
