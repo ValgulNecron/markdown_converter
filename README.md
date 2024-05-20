@@ -20,4 +20,3 @@ markdown_converter = "0.1.0"
 
 ## Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
-test
