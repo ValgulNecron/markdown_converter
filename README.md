@@ -15,7 +15,7 @@ Add the following to your Cargo.toml file:
 
 ```toml
 [dependencies]
-markdown_converter = "0.1.0"
+markdown_converter = "0.3.0"
 ```
 
 ## Contributing
