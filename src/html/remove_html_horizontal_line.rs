@@ -1,5 +1,6 @@
-use regex::Regex;
 use std::borrow::Cow;
+
+use regex::Regex;
 
 /// `remove_html_horizontal_line` is a function that takes a string reference as an input and returns a Cow<str>.
 /// This function is designed to remove horizontal line syntax from a given string.

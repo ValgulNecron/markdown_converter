@@ -1,5 +1,7 @@
-use regex::Regex;
 use std::borrow::Cow;
+
+use regex::Regex;
+
 /// `remove_anilist_horizontal_line` is a function that takes a string reference as an input and returns a Cow<str>.
 /// This function is designed to remove Anilist horizontal line syntax from the input string.
 /// It specifically targets and removes the following patterns:

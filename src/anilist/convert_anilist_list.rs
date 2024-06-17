@@ -1,6 +1,8 @@
-use crate::html::convert_html_list::convert_html_list;
-use regex::Regex;
 use std::borrow::Cow;
+
+use regex::Regex;
+
+use crate::html::convert_html_list::convert_html_list;
 
 /// `convert_anilist_list` is a function that takes a string reference as an input and returns a Cow<str>.
 /// This function is designed to convert Anilist list syntax to standard markdown list syntax.

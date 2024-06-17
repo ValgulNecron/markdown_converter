@@ -1,5 +1,6 @@
-use regex::Regex;
 use std::borrow::Cow;
+
+use regex::Regex;
 
 /// `convert_html_h_header` is a function that takes a string reference as an input and returns a Cow<str>.
 /// This function is designed to convert HTML header tags to markdown syntax in a given string.

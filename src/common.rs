@@ -14,6 +14,7 @@ use std::borrow::Cow;
 pub fn add_anti_slash(value: &str) -> Cow<str> {
     Cow::Owned(value.replace('`', "\\`"))
 }
+
 #[cfg(test)]
 mod tests {
     use super::*;

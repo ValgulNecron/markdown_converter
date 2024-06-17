@@ -1,6 +1,7 @@
 # Markdown Converter
 
-Markdown Converter is a simple HTML to Markdown converter and flavored Markdown to Discord Markdown converter. It is designed to be simple and quick, mainly for personal use, but feel free to use it and contribute if you like.
+Markdown Converter is a simple HTML to Markdown converter and flavored Markdown to Discord Markdown converter. It is
+designed to be simple and quick, mainly for personal use, but feel free to use it and contribute if you like.
 
 ## Features
 
@@ -11,6 +12,7 @@ Markdown Converter is a simple HTML to Markdown converter and flavored Markdown 
 ## Usage
 
 ### Installation
+
 Add the following to your Cargo.toml file:
 
 ```toml
@@ -19,4 +21,5 @@ markdown_converter = "0.3.0"
 ```
 
 ## Contributing
+
 Contributions are welcome! Please feel free to submit a Pull Request.

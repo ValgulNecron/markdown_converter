@@ -1,5 +1,6 @@
-use crate::html::convert_html_bold::convert_html_bold;
 use std::borrow::Cow;
+
+use crate::html::convert_html_bold::convert_html_bold;
 
 /// `convert_anilist_bold` is a function that takes a string reference as an input and returns a Cow<str>.
 /// This function is designed to convert Anilist bold syntax to standard markdown bold syntax.

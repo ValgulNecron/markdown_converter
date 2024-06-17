@@ -1,5 +1,6 @@
-use crate::html::convert_html_italic::convert_html_italic;
 use std::borrow::Cow;
+
+use crate::html::convert_html_italic::convert_html_italic;
 
 /// `convert_anilist_italic` is a function that takes a string reference as an input and returns a Cow<str>.
 /// This function is designed to convert Anilist italic syntax to standard markdown italic syntax.

@@ -1,5 +1,6 @@
-use crate::html::remove_html_p_align::remove_html_p_align;
 use std::borrow::Cow;
+
+use crate::html::remove_html_p_align::remove_html_p_align;
 
 /// `remove_anilist_alignment` is a function that takes a string reference as an input and returns a Cow<str>.
 /// This function is designed to remove Anilist alignment syntax from the input string.

@@ -1,5 +1,6 @@
-use regex::Regex;
 use std::borrow::Cow;
+
+use regex::Regex;
 
 /// `remove_html_image` is a function that takes a string reference as an input and returns a Cow<str>.
 /// This function is designed to remove image tags and markdown image syntax from a given string.
